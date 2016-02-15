@@ -7,6 +7,7 @@ body {
   position:relative;
   font-size: 1.25em;
   margin: auto;
+
 }
 
 select option {
@@ -16,6 +17,8 @@ select option {
 #submit {
   color:#000000;
   font-weight:bold;
+  margin:auto;
+  margin-top: 1%;
 }
 
 .marvel {
@@ -31,15 +34,27 @@ select option {
 }
 
 h1 {
-  font-size: 3em;
+  font-size: 2.5em;
   text-align: center;
   border-color: #fff;
   border-style: double;
-  
+
 }
 .password {
-  font-size: 1.8em;
+  font-size: 1.5em;
   text-align: center;
+  margin: auto;
+  color:#c72c14;
+}
+
+.numWord {
+  margin: auto;
+  padding-top: 1%;
+}
+
+.case {
+  margin: auto;
+  padding-top: 1%;
 }
 
 img {
