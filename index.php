@@ -20,14 +20,15 @@
 			<span><?php echo $password; ?></span>
 		</div>
 
-		<form  method="GET">
+		<form action="index.php" method="POST">
+
 			<div class="numWord">
 				<label for="numWord"># of words:</label>
 				<select name="numWord">
 					<option value="1">1</option>
 					<option value="2">2</option>
 					<option value="3">3</option>
-					<option value="4">4</option>
+					<option value="4" selected>4</option>
 					<option value="5">5</option>
 					<option value="6">6</option>
 					<option value="7">7</option>
@@ -36,28 +37,42 @@
 				</select>
 			</div>
 
+			<div class="case">
+				<label for="case">Case:</label>
+				<select name="case">
+					<option value="default" selected>Default</option>
+					<option value="uppercase">All Uppercase</option>
+					<option value="lowercase">All Lowercase</option>
+					<option value="fuppercase">Capitalize First Letter</option>
+				</select>
+			</div>
+
 			<div class="addNum">
-				<input type="checkbox" id="addNum" name="addNum" value="1">
-				Add a number
+				<input type="checkbox" id="addNum" name="addNum" value="1"> Add a random number (0-9)
 			</div>
 
 			<div class="addSymbol">
-				<input type="checkbox" id="addSymbol" name="addSymbol" value="1">
-				Add a symbol
+				<input type="checkbox" id="addSymbol" name="addSymbol" value="1"> Add a symbol
 			</div>
 
-			<div class="uppercase">
-				<input type="checkbox" id="uppercase" name="uppercase" value="1">
-				Capitalize all letters
+			<div class="wordfile">
+				<input type="checkbox" id="wordfile" name="wordfile" value="1"> Use Marvel & DC Universe Hero as password!
 			</div>
-			<div class="lowercase">
-				<input type="checkbox" id="lowercase" name="lowercase" value="1">
-				Lowercase all letters
-			</div>
+
 
 			<input type="submit" id="submit" value="Generate">
 		</form>
-</div>
+	</div>
+
+	<div class="container">
+		<div class="xkcdInfo">
+			<h1>Purpose</h1>
+			<p>
+				This is an xkcd style password generator that makes password easier to remember!
+			</p>
+			<img class="comic" src="<?php echo $xkcdimg; ?>" alt="xkcd style password comic">
+		</div>
+	</div>
 
 </body>
 
