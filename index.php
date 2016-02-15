@@ -14,9 +14,8 @@
 
 <body>
 	<div class="container">
-		<h1>xkcd Password Generator</h1>
+		<h1>Awesome xkcd Password Generator</h1>
 		<div class="password">
-			<span>Password: </span>
 			<span><?php echo $password; ?></span>
 		</div>
 
@@ -56,7 +55,7 @@
 			</div>
 
 			<div class="wordfile">
-				<input type="checkbox" id="wordfile" name="wordfile" value="1"> Use Marvel & DC Universe Hero as password!
+				<input type="checkbox" id="wordfile" name="wordfile" value="1"> Use <span class="marvel">Marvel</span> & <span class="dc">DC Universe</span> Heroes as password!
 			</div>
 
 
@@ -66,7 +65,7 @@
 
 	<div class="container">
 		<div class="xkcdInfo">
-			<h1>Purpose</h1>
+			<h2>Purpose</h2>
 			<p>
 				This is an xkcd style password generator that makes password easier to remember!
 			</p>
