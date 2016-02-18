@@ -7,7 +7,7 @@
 This website uses PHP to generate xkcd style passwords. Functions include picking the number of words, cases, and include a number/symbol.
 
 ## Demo
-<>
+<http://screencast.com/t/r9CRXuhatlxj>
 
 ## Details for teaching team
 I have added an additional word list of hero characters from Marvel and DC Universe to add some spice to the project.
