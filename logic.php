@@ -23,38 +23,49 @@
 	fclose($handle);
 
   # Method of generation the password
-	if($wordlist = file($wordfile, FILE_IGNORE_NEW_LINES)) {
-		$password = "";
-		$count = (empty($_POST["numWord"]) ? 4 : $_POST["numWord"]);
-		for ($i = 0; $i < $count; $i++) {
-			$word = $wordlist[rand(0, $linecount)];
-			if ($i != 0) {
-				$password .= ("-".$word);
-			} else {
-				$password .= $word;
-			}
-		}
+	$wordlist = file($wordfile, FILE_IGNORE_NEW_LINES);
+	$password = "";
+	$count = (empty($_POST["numWord"]) ? 4 : $_POST["numWord"]);
 
-		#Set case
-		if (isset($_POST["case"])){
-			if ($_POST["case"]== "uppercase") {
-			$password = strtoupper($password);
-			}
-			if ($_POST["case"]== "lowercase") {
-			$password = strtolower($password);
-			}
-			if ($_POST["case"]== "fuppercase") {
-			$password = ucfirst($password);
-			}
-		}
+	# Validate number#
+ $addNum = (empty($_POST["addNum"]) ? null : $_POST["addNum"]);
 
-	#If add a number is selected
-		if(isset($_POST["addNum"])) {
-				$password .= rand(0, 9);
-		}
-
-	#If add a symbol is selected
-		if(isset($_POST["addSymbol"])) {
-				$password .= $symbol[array_rand($symbol,1)];
-		}
+ if (!is_null($addNum) AND ($addNum > 99 OR !ctype_digit($addNum))) {
+			$password .= "Please enter a valid number ranging	 0 to 99";
 	}
+	else {
+
+			for ($i = 0; $i < $count; $i++) {
+				$word = $wordlist[rand(0, $linecount)];
+				if ($i != 0) {
+					$password .= ("-".$word);
+				}
+				else {
+					$password .= $word;
+				}
+			}
+
+			#Set case
+			if (isset($_POST["case"])){
+				if ($_POST["case"]== "uppercase") {
+				$password = strtoupper($password);
+				}
+				if ($_POST["case"]== "lowercase") {
+				$password = strtolower($password);
+				}
+				if ($_POST["case"]== "fuppercase") {
+				$password = ucfirst($password);
+				}
+			}
+
+		#If a number is entered
+			if(isset($_POST["addNum"])) {
+				$password .= $addNum;
+			}
+
+		#If add a symbol is selected
+			if(isset($_POST["addSymbol"])) {
+				$password .= $symbol[array_rand($symbol,1)];
+			}
+
+ }

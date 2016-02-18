@@ -47,7 +47,7 @@
 			</div>
 <!--add number to the password-->
 			<div class="addNum">
-				<input type="checkbox" id="addNum" name="addNum" value="1"> Add a random number (0-9)
+		  	Optional number (0-99)  <input type="text" id="addNum" name="addNum" value="">
 			</div>
 <!--add symbol to the password-->
 			<div class="addSymbol">

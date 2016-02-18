@@ -86,14 +86,9 @@ h1 {
   padding: .5em 2em .5em 2em;
 }
 
-.numWord {
+.numWord, .case, .addNum {
   margin: auto;
-  padding-top: 1%;
-}
-
-.case {
-  margin: auto;
-  padding-top: 1%;
+  padding-top: 0.5%;
 }
 
 img {
